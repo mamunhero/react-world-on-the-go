@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import "./Country.css"
 
 
-const Country = ({country}) => {
+const Country = ({country, handleVisitedCountries}) => {
   // console.log(country);
   // condition visited or not visited
   const [visited, setVisited] = useState(false)
   // handle visited onClick
   const handleVisited =()=>{
-    console.log("button clicked");
+    // console.log("button clicked");
     // 1st system
     // if (visited) {
     //   setVisited(false)
@@ -19,6 +19,7 @@ const Country = ({country}) => {
     // setVisited(visited? false : true)
     // 3rd system
     setVisited(!visited)
+    handleVisitedCountries(country)
   }
   return (
     <div className={`country ${visited && "country-visited"}`}>
